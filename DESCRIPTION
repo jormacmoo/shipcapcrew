@@ -1,0 +1,12 @@
+Package: shipcapcrew
+Type: Package
+Title: Ship, Captain, Crew Dice Game
+Version: 0.1.0
+Author: Emily Daubenspeck, Jordan Moody, Paige Patrick
+Maintainer: Jordan Moody <jmoody@smith.edu>
+Description: 
+    Use four spaces when indenting paragraphs within the Description.
+    Interactive gameplay and strategy functions for dice game Ship, Captain, Crew.
+License: None
+Encoding: UTF-8
+LazyData: true
