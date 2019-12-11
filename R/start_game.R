@@ -36,8 +36,8 @@ start_game <- function(...) {
   }
 
   # does player want to play again?
-  plag <- play_again()
-  if (TRUE) {
+  plag <- play_again(score)
+  if (plag == TRUE) {
     start_game()
   } else {
     message("Thank you for playing!")
@@ -51,7 +51,7 @@ game_turn <- function(prev_rolls, dice_to_roll, prev_dice) {
   leftover_dice <- output[[2]]
   score <- find_score(good_dice, leftover_dice)
   prev_rolls = prev_rolls + 1
-  player_message(good_dice, score, prev_rolls+1)
+  player_message(good_dice, score, prev_rolls)
 
   return(list(length(leftover_dice), score, good_dice))
 }
