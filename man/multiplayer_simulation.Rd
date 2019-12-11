@@ -20,6 +20,6 @@ multiplayer_simulation(100, c("none", "greedy"))
 
 }
 \seealso{
-Other simulation functions: \code{\link{reset_game}}
+Other simulation functions: \code{\link{reset_simulation}}
 }
 \concept{simulation functions}
