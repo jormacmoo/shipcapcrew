@@ -13,9 +13,22 @@
 #    add_scores: creates gamecard dataframe and appends latest player score
 #    reset_simulation: removes gamecard from environment so new simulation can be run
 
-# strategy function encompassing all strategies
-# this function takes arguments from initial_gameplay and calls the correct strategy function
-# based on the strategy argument for a particular player
+#' strategy_function
+#'
+#' Uses the `strategy` argument to determine which alternative rolling function to call when a ship,
+#' captain, and crew are all present in a player's hand.
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 strategy_function <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   # checking that arguments intended to be numeric or integer are not character or logical
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker)
@@ -44,7 +57,22 @@ strategy_function <- function(player_dice, num_dice, num_games, num_rolls, strat
   }
   }
 
-# a strategy function: always reroll when possible
+#' greedy_reroll
+#'
+#' An alternative strategy reroll function, greedy_reroll rolls as many times as permitted
+#' without consideration for the value of any "cargo" in the player's hand.
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 greedy_reroll <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker)
   # checking that arguments intended to be numeric or integer are not character or logical
@@ -80,6 +108,21 @@ greedy_reroll <- function(player_dice, num_dice, num_games, num_rolls, strategy,
   }
   }
 
+#' rolling_function
+#'
+#' Simulates rolling of a player's remaining dice and calls initial_gameplay
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 rolling_function <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker)
   # checking that arguments intended to be numeric or integer are not character or logical
@@ -159,7 +202,21 @@ rolling_function <- function(player_dice, num_dice, num_games, num_rolls, strate
   }
   }
 
-
+#' final_score_tab
+#'
+#' Tabulates final score for individual game scenerios and calls add_scores
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 final_score_tab <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker)
   # checking that arguments intended to be numeric or integer are not character or logical
@@ -281,6 +338,22 @@ start_simulation <- function(num_games, strategy = "default", multiplayer = FALS
   }
 }
 
+#' initial_gameplay
+#'
+#' Checks status of game running and makes calls to appropriate other helper functions
+#' depending on the number of rolls left, number of games completed, etc.
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker)
   # checking that arguments intended to be numeric or integer are not character or logical
