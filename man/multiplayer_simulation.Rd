@@ -10,6 +10,8 @@ multiplayer_simulation(num_games, strategy, multiplayer = TRUE)
 \item{num_games}{the number of games a user wishes to run within the simulation}
 
 \item{strategy}{a character vector containing p1 and p2 strategies}
+
+\item{multiplayer}{a logical vector with default value TRUE, indicating that the simulation is multiplayer}
 }
 \description{
 Initializes gameplay for a two player simulation of Ship, Captain, Crew

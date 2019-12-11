@@ -13,6 +13,8 @@
 #    add_scores: creates gamecard dataframe and appends latest player score
 #    reset_simulation: removes gamecard from environment so new simulation can be run
 
+game_env <- new.env(parent = emptyenv())
+
 #' strategy_function
 #'
 #' Uses the `strategy` argument to determine which alternative rolling function to call when a ship,
@@ -276,17 +278,17 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
     gamecard <- data.frame(gamecard, scores_vector)
     if(dim(gamecard)[2] == 5){
       colnames(gamecard)[5] <- "p2_scores_vector"
-      assign("gamecard", gamecard, envir = .GlobalEnv)
+      assign("gamecard", gamecard, envir = game_env)
       stop("Simulation complete!")
     }
-    assign("gamecard", gamecard, envir = .GlobalEnv)
+    assign("gamecard", gamecard, envir = game_env)
     stop("Simulation complete!")
   }
   # if all requested games have been played and the game is multiplayer,
   # create gamecard, assign to GlobalEnv, and call multiplayer_simulation to play second player's game
   if(game_ticker == num_games & multiplayer == TRUE){
     gamecard <- data.frame(gamecard, scores_vector)
-    assign("gamecard", gamecard, envir = .GlobalEnv)
+    assign("gamecard", gamecard, envir = game_env)
     multiplayer_simulation(num_games, strategy, multiplayer)
   }
   # if the reuested number of games has not been played, reset num_rolls and
@@ -301,6 +303,7 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
 #'
 #' @param num_games the number of games to be simulated
 #' @param strategy a character vector containing the player's strategy
+#' @param multiplayer a logical vector with default value TRUE, indicating that the simulation is multiplayer
 #'
 #' @family simulation functions
 #'
@@ -320,14 +323,14 @@ start_simulation <- function(num_games, strategy = "default", multiplayer = FALS
   game_vector <- c(1:num_games)
   # if game is multiplayer and gamecard already exists, create p2's strategy vector,
   # append to gamecard, and call initial_gameplay for p2
-  if(multiplayer == TRUE & exists("gamecard", where = .GlobalEnv)){
+  if(multiplayer == TRUE & exists("gamecard", where = game_env)){
     p2_strategy_vector <- c(paste(strategy[2]))
     gamecard <- data.frame(gamecard, p2_strategy_vector)
     initial_gameplay(player_dice = c(), num_dice = 5, num_games, num_rolls = 0, strategy = strategy[2], game_ticker = 0, gamecard, scores_vector = c(), multiplayer)
   }
   # if game is multiplayer and gamecard does not exist, create p1's strategy vector,
   ## append to gamecard, and call initial_gameplay for p1
-  if(multiplayer == TRUE & exists("gamecard", where = .GlobalEnv) == FALSE){
+  if(multiplayer == TRUE & exists("gamecard", where = game_env) == FALSE){
     p1_strategy_vector <- c(paste(strategy[1]))
     gamecard <- data.frame(p1_strategy_vector, game_vector)
     initial_gameplay(player_dice = c(), num_dice = 5, num_games, num_rolls = 0, strategy = strategy[1], game_ticker = 0, gamecard, scores_vector = c(), multiplayer)
@@ -399,6 +402,7 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 #'
 #' @param num_games the number of games a user wishes to run within the simulation
 #' @param strategy a character vector containing p1 and p2 strategies
+#' @param multiplayer a logical vector with default value TRUE, indicating that the simulation is multiplayer
 #'
 #' @examples
 #' \dontrun{multiplayer_simulation(4, c("greedy", "greedy"))
@@ -418,14 +422,14 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
   }
   # if gamecard does not exist in the GlobalEnv, create a strategy vector in GlobalEnv
   # call start_simulation to initialize gameplay
-  if(exists("gamecard", where = .GlobalEnv) == FALSE){
-    assign("strategy", strategy, .GlobalEnv)
+  if(exists("gamecard", where = game_env) == FALSE){
+    assign("strategy", strategy, game_env)
     start_simulation(num_games, strategy = strategy[1], multiplayer = TRUE)
   }
   # if gamecard does exist in the GlobalEnv, define strategy argument as the second
   # object in the strategy vector, create p2's strategy vector,
-  if(exists("gamecard", where = .GlobalEnv)){
-    strategy <- get("strategy", .GlobalEnv)[2]
+  if(exists("gamecard", where = game_env)){
+    strategy <- get("strategy", game_env)[2]
     p2_strategy_vector <- c(strategy)
     gamecard <- data.frame(gamecard, p2_strategy_vector)
     initial_gameplay(player_dice = c(), num_dice = 5, num_games, num_rolls = 0, strategy = "default", game_ticker = 0, gamecard, scores_vector = c(), multiplayer = FALSE)
@@ -443,12 +447,13 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
 #'
 #' @export
 reset_simulation <- function(){
-  if(exists("gamecard", where = .GlobalEnv)){
+  gamecard <- NULL
+  if(exists("gamecard", where = game_env)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
-from the global environment. Be sure to assign gamecard to a new object if you'd
+from the game environment. Be sure to assign gamecard to a new object if you'd
 like to keep it! Would you like to reset? Y/N")
    if(confirm_input == "Y"){
-     rm(gamecard, pos = .GlobalEnv)
+     rm(gamecard, pos = game_env)
      cat("You're ready to run another simulation!")
    }
    if(confirm_input == "N"){

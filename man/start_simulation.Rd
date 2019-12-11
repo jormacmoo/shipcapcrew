@@ -10,6 +10,8 @@ start_simulation(num_games, strategy = "default", multiplayer = FALSE)
 \item{num_games}{the number of games to be simulated}
 
 \item{strategy}{a character vector containing the player's strategy}
+
+\item{multiplayer}{a logical vector with default value TRUE, indicating that the simulation is multiplayer}
 }
 \description{
 Initializes gameplay for a single player simulation of Ship, Captain, Crew
