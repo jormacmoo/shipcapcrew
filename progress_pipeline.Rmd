@@ -1,0 +1,14 @@
+---
+title: "In-Progress Pipeline"
+author: "Jordan Moody"
+date: "December 9, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Interactive Gameplay Pipeline
+
+In order to successfully run and test the start_game function, you must first run utilities.R, reroll_prompt.R, check_roll.R, start_game.R, reroll.R, and play_again.R

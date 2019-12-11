@@ -2,11 +2,25 @@ Package: shipcapcrew
 Type: Package
 Title: Ship, Captain, Crew Dice Game
 Version: 0.1.0
-Author: Emily Daubenspeck, Jordan Moody, Paige Patrick
-Maintainer: Jordan Moody <jmoody@smith.edu>
+Authors@R:
+    c(person(given = "Emily",
+            family = "Daubenspeck",
+            role = c("aut", "cre"),
+            email = "edaubenspeck@smith.edu"),
+      person(given = "Jordan",
+            family = "Moody",
+            role = c("aut"),
+            email = "jmoody@smith.edu"),
+      person(given = "Paige",
+            family = "Patrick",
+            role = c("aut"),
+            email = "ppatrick@smith.edu"))
 Description: 
-    Use four spaces when indenting paragraphs within the Description.
     Interactive gameplay and strategy functions for dice game Ship, Captain, Crew.
 License: None
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Imports:
+    
