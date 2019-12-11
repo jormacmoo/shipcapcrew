@@ -17,7 +17,7 @@ reset_simulation()
 
 }
 \seealso{
-Other simulation functions: 
-\code{\link{multiplayer_simulation}()}
+Other simulation functions: \code{\link{multiplayer_simulation}},
+  \code{\link{start_simulation}}
 }
 \concept{simulation functions}

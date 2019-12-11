@@ -18,3 +18,8 @@ Initializes gameplay for a single player simulation of Ship, Captain, Crew
 start_simulation(10, "greedy")
 
 }
+\seealso{
+Other simulation functions: \code{\link{multiplayer_simulation}},
+  \code{\link{reset_simulation}}
+}
+\concept{simulation functions}

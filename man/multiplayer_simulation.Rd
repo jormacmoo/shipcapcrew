@@ -16,10 +16,11 @@ Initializes gameplay for a two player simulation of Ship, Captain, Crew
 }
 \examples{
 multiplayer_simulation(4, c("greedy", "greedy"))
-multiplayer_simulation(100, c("none", "greedy"))
+multiplayer_simulation(50, c("none", "greedy"))
 
 }
 \seealso{
-Other simulation functions: \code{\link{reset_simulation}}
+Other simulation functions: \code{\link{reset_simulation}},
+  \code{\link{start_simulation}}
 }
 \concept{simulation functions}

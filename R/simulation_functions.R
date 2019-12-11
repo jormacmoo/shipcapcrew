@@ -242,6 +242,8 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
 #' @param num_games the number of games to be simulated
 #' @param strategy a character vector containing the player's strategy
 #'
+#' @family simulation functions
+#'
 #' @examples
 #' start_simulation(10, "greedy")
 #'
@@ -324,7 +326,7 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 #'
 #' @examples
 #' multiplayer_simulation(4, c("greedy", "greedy"))
-#' multiplayer_simulation(100, c("none", "greedy"))
+#' multiplayer_simulation(50, c("none", "greedy"))
 #'
 #' @family simulation functions
 #'
