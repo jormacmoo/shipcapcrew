@@ -15,6 +15,7 @@ reroll <- function(num_dice){
   } else {
     message(cat("You've rolled ", roll))
   }
+  return(roll)
 }
 
 find_score <- function(needed, cargo) {
