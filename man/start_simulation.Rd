@@ -15,7 +15,7 @@ start_simulation(num_games, strategy = "default", multiplayer = FALSE)
 Initializes gameplay for a single player simulation of Ship, Captain, Crew
 }
 \examples{
-start_simulation(10, "greedy")
+\dontrun{start_simulation(10, "greedy")}
 
 }
 \seealso{

@@ -4,7 +4,7 @@
 #'
 #'User-playable ship, captain, crew game
 #'
-#'@param None
+#'@param ... optional arguments, not necessary for gameplay
 #'
 #'@ examples
 #'start_game()

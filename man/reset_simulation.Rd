@@ -4,17 +4,10 @@
 \alias{reset_simulation}
 \title{reset_simulation}
 \usage{
-reset_simulation(...)
-}
-\arguments{
-\item{None}{}
+reset_simulation()
 }
 \description{
 Configures global environment to allow for repeated game simulations
-}
-\examples{
-reset_simulation()
-
 }
 \seealso{
 Other simulation functions: \code{\link{multiplayer_simulation}},

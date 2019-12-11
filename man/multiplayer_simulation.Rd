@@ -15,8 +15,8 @@ multiplayer_simulation(num_games, strategy, multiplayer = TRUE)
 Initializes gameplay for a two player simulation of Ship, Captain, Crew
 }
 \examples{
-multiplayer_simulation(4, c("greedy", "greedy"))
-multiplayer_simulation(50, c("none", "greedy"))
+\dontrun{multiplayer_simulation(4, c("greedy", "greedy"))
+multiplayer_simulation(50, c("none", "greedy"))}
 
 }
 \seealso{

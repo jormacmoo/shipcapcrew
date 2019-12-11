@@ -28,6 +28,9 @@
 #' @param scores_vector a vector of a player's scores
 #' @param multiplayer a logical vector determining whether games are single or multiplayer
 #'
+#' @importFrom purrr map_lgl
+#' @importFrom purrr map
+#'
 #' @family helper functions
 strategy_function <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer){
   # checking that arguments intended to be numeric or integer are not character or logical
@@ -302,7 +305,7 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
 #' @family simulation functions
 #'
 #' @examples
-#' start_simulation(10, "greedy")
+#' \dontrun{start_simulation(10, "greedy")}
 #'
 #' @export
 start_simulation <- function(num_games, strategy = "default", multiplayer = FALSE){
@@ -398,8 +401,8 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 #' @param strategy a character vector containing p1 and p2 strategies
 #'
 #' @examples
-#' multiplayer_simulation(4, c("greedy", "greedy"))
-#' multiplayer_simulation(50, c("none", "greedy"))
+#' \dontrun{multiplayer_simulation(4, c("greedy", "greedy"))
+#' multiplayer_simulation(50, c("none", "greedy"))}
 #'
 #' @family simulation functions
 #'
@@ -436,15 +439,10 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
 #'
 #' Configures global environment to allow for repeated game simulations
 #'
-#' @param None
-#'
-#' @examples
-#' reset_simulation()
-#'
 #' @family simulation functions
 #'
 #' @export
-reset_simulation <- function(...){
+reset_simulation <- function(){
   if(exists("gamecard", where = .GlobalEnv)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
 from the global environment. Be sure to assign gamecard to a new object if you'd
