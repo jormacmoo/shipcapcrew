@@ -1,7 +1,8 @@
 # shipcapcrew
 
   <!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/jormacmoo/shipcapcrew.svg?branch=master)](https://travis-ci.org/jormacmoo/shipcapcrew)
+  [![Lifecycle:stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+  [![Travis-CI Build Status](https://travis-ci.org/jormacmoo/shipcapcrew.svg?branch=master)](https://travis-ci.org/jormacmoo/shipcapcrew)
   <!-- badges: end -->
   
 R package for 'Ship, Captain, Crew' Dice Game
