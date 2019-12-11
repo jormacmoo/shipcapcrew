@@ -11,7 +11,7 @@ R package for 'Ship, Captain, Crew' Dice Game
 
 ## Install
 
-To install the CRAN version, use:
+To install the CRAN version (eventually), use: 
 
 ```{r}
 install.packages(shipcapcrew)
