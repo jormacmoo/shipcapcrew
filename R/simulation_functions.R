@@ -1,7 +1,7 @@
 #simulation_functions
 #includes:
-#    start_game: initializes single-player game with dice, number of rolls, etc.
-#    multiplayer_game: initializes multiplayer game
+#    start_simulation: initializes single-player game with dice, number of rolls, etc.
+#    multiplayer_simulation: initializes multiplayer game
 #    initial_gameplay: checks for number of rolls, dice, etc. Calls other gameplay functions
 #                      depending on game status
 #    rolling_function: simulates dice roll with sampling based on number of dice left, determines
@@ -225,11 +225,11 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
     stop("Simulation complete!")
   }
   # if all requested games have been played and the game is multiplayer,
-  # create gamecard, assign to GlobalEnv, and call multiplayer_game to play second player's game
+  # create gamecard, assign to GlobalEnv, and call multiplayer_simulation to play second player's game
   if(game_ticker == num_games & multiplayer == TRUE){
     gamecard <- data.frame(gamecard, scores_vector)
     assign("gamecard", gamecard, envir = .GlobalEnv)
-    multiplayer_game(num_games, strategy, multiplayer)
+    multiplayer_simulation(num_games, strategy, multiplayer)
   }
   # if the reuested number of games has not been played, reset num_rolls and
   # call initial_gameplay to begin a new game for this player
@@ -245,10 +245,10 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
 #' @param strategy a character vector containing the player's strategy
 #'
 #' @examples
-#' start_game(10, "greedy")
+#' start_simulation(10, "greedy")
 #'
 #' @export
-start_game <- function(num_games, strategy = "default", multiplayer = FALSE){
+start_simulation <- function(num_games, strategy = "default", multiplayer = FALSE){
   # start putting in error checks
   if(is.integer(num_games) == FALSE & is.numeric(num_games) == FALSE | length(num_games) > 1){
     stop("num_games should be an integer or numeric argument of length = 1.")
@@ -317,7 +317,7 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
   }
 }
 
-#' multiplayer_game
+#' multiplayer_simulation
 #'
 #' Initializes gameplay for a two player simulation of Ship, Captain, Crew
 #'
@@ -325,13 +325,13 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 #' @param strategy a character vector containing p1 and p2 strategies
 #'
 #' @examples
-#' multiplayer_game(4, c("greedy", "greedy"))
-#' multiplayer_game(100, c("none", "greedy"))
+#' multiplayer_simulation(4, c("greedy", "greedy"))
+#' multiplayer_simulation(100, c("none", "greedy"))
 #'
 #' @family simulation functions
 #'
 #' @export
-multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
+multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
   # check that num_games is an integer or numeric vector of length = 1
   if(is.integer(num_games) == FALSE & is.numeric(num_games) == FALSE | length(num_games) > 1){
     stop("num_games should be an integer or numeric argument of length = 1.")
@@ -341,10 +341,10 @@ multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
     stop("strategy should be a character vector holding the strategy arguments for up to two players.")
   }
   # if gamecard does not exist in the GlobalEnv, create a strategy vector in GlobalEnv
-  # call start_game to initialize gameplay
+  # call start_simulation to initialize gameplay
   if(exists("gamecard", where = .GlobalEnv) == FALSE){
     assign("strategy", strategy, .GlobalEnv)
-    start_game(num_games, strategy = strategy[1], multiplayer = TRUE)
+    start_simulation(num_games, strategy = strategy[1], multiplayer = TRUE)
   }
   # if gamecard does exist in the GlobalEnv, define strategy argument as the second
   # object in the strategy vector, create p2's strategy vector,
