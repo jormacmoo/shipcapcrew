@@ -2,19 +2,22 @@
 
 start_game <- function(...) {
   prev_rolls <- 0
+  prev_dice <- NULL
   # the first roll will always have five dice
-  output <- game_turn(prev_rolls, 5)
+  output <- game_turn(prev_rolls, 5, prev_dice)
   turn1 <- output[[1]]
   score <- output[[2]]
+  prev_dice <- output[[3]]
 
   # give player option to reroll
   player_ans <- reroll_prompt(prev_rolls+1)
 
   # if player wants to reroll, go to second turn
   if (player_ans == TRUE) {
-    output <- game_turn(1, turn1)
+    output <- game_turn(1, turn1, prev_dice)
     turn2 <- output[[1]]
     score <- output[[2]]
+    prev_dice <- output[[3]]
   } else if (player_ans == FALSE) {
     play_again(score)
   }
@@ -24,9 +27,10 @@ start_game <- function(...) {
 
   # if player wants to reroll, go to third turn
   if (player_ans == TRUE) {
-    output <- game_turn(2, turn2)
+    output <- game_turn(2, turn2, prev_dice)
     turn3 <- output[[1]]
     score <- output[[2]]
+    prev_dice <- output[[3]]
   } else if (player_ans == FALSE) {
     play_again(score)
   }
@@ -40,10 +44,7 @@ start_game <- function(...) {
   }
 }
 
-game_turn <- function(prev_rolls, dice_to_roll) {
-  if (prev_rolls == 0) {
-    prev_dice <- NULL
-  }
+game_turn <- function(prev_rolls, dice_to_roll, prev_dice) {
   roll <<- reroll(dice_to_roll)
   output <- check_roll(roll, prev_dice)
   good_dice <- output[[1]]
@@ -52,5 +53,5 @@ game_turn <- function(prev_rolls, dice_to_roll) {
   prev_rolls = prev_rolls + 1
   player_message(good_dice, score, prev_rolls+1)
 
-  return(list(length(leftover_dice), score))
+  return(list(length(leftover_dice), score, good_dice))
 }
