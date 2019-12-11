@@ -23,7 +23,7 @@ devtools::install_github("jormacmoo/shipcapcrew")
 
 #### Rules
 
-Ship, Captain, Crew is a game that requires five six-sided dice and usually at least two players. Each player has at most three rolls they can use per game, the initial roll and two optional rerolls. Using their three rolls, each player tries to obtain a ship, a captain, and a crew, in that specific order. A ship is represented by a 6, a captain is represented by 5, and a crew is represented by a 4. Once these three dice are obtained, the sum of the remaining two dice (their cargo) is the player's score. If a player is unable to assemble a ship, captain, and crew, then their score is zero. The player with the highest cargo score wins the game. 
+Ship, Captain, Crew is a game that requires five six-sided dice and usually at least two players. Each player has at most three rolls they can use per game, the initial roll and two optional rerolls. Using their three rolls, each player tries to obtain a ship, a captain, and a crew, in that specific order. A ship is represented by a 6, a captain is represented by 5, and a crew is represented by a 4. Once these three dice are obtained, the sum of the remaining two dice (their cargo) is the player's score. If a player is unable to assemble a ship, captain, and crew, then their score is zero. The player with the highest cargo score wins the game. [Click here to view a more in-depth description of the rules for the game.](https://www.dicegamedepot.com/ship-captain-and-crew-dice-game-rules/)
 
 #### Example
 
@@ -41,6 +41,8 @@ Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the 
 ## Two Main Components of The Package
 
 ### Interactive Gameplay
+
+Below is an example of the interactive gameplay functionality of the package.
 
 ![](test_video.gif)
 
