@@ -45,7 +45,7 @@ Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the 
 
 ### Interactive Gameplay
 
-The interactive gameplay begins by calling the function `start_game()` and responding to any prompts in the console.
+The text-based interactive gameplay begins by calling the function `start_game()` and responding to any prompts in the console.
 
 Below are two example of the interactive gameplay functionality of the package: 
 
