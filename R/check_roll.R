@@ -1,4 +1,6 @@
-check_roll <- function(rolled_dice) {
+check_roll <- function(rolled_dice, prev_dice) {
+
+  rolled_dice <- c(rolled_dice, prev_dice)
 
   check_number <- function(num) {
     if (num < 7) {
