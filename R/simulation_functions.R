@@ -218,11 +218,11 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
       colnames(gamecard)[5] <- "p2_scores_vector"
       assign("gamecard", gamecard, envir = .GlobalEnv)
       print(gamecard)
-      stop("we're done here please don't crash!")
+      stop("Simulation complete!")
     }
     assign("gamecard", gamecard, envir = .GlobalEnv)
     print(gamecard)
-    stop("we're done here please don't crash!")
+    stop("Simulation complete!")
   }
   # if all requested games have been played and the game is multiplayer,
   # create gamecard, assign to GlobalEnv, and call multiplayer_game to play second player's game
@@ -239,6 +239,15 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
   }
   }
 
+#' Initializes gameplay for a single player simulation of Ship, Captain, Crew
+#'
+#' @param num_games the number of games to be simulated
+#' @param strategy a character vector containing the player's strategy
+#'
+#' @example
+#' start_game(10, "greedy")
+#'
+#' @export
 start_game <- function(num_games, strategy = "default", multiplayer = FALSE){
   # start putting in error checks
   if(is.integer(num_games) == FALSE & is.numeric(num_games) == FALSE | length(num_games) > 1){
@@ -310,7 +319,7 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 
 #' multiplayer_game
 #'
-#' Initializes gameplay for two players
+#' Initializes gameplay for a two player simulation of Ship, Captain, Crew
 #'
 #' @param num_games the number of games a user wishes to run within the simulation
 #' @param strategy a character vector containing p1 and p2 strategies
@@ -318,6 +327,8 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
 #' @examples
 #' multiplayer_game(4, c("greedy", "greedy"))
 #' multiplayer_game(100, c("none", "greedy"))
+#'
+#' @family simulation functions
 #'
 #' @export
 multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
@@ -344,7 +355,7 @@ multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
     initial_gameplay(player_dice = c(), num_dice = 5, num_games, num_rolls = 0, strategy = "default", game_ticker = 0, gamecard, scores_vector = c(), multiplayer = FALSE)
   }
   if(dim(gamecard)[2] == 5){
-    stop("we're done! No crashing pls!!")
+    stop("Simulation complete!")
   }
 }
 
@@ -356,6 +367,8 @@ multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
 #'
 #' @examples
 #' reset_game()
+#'
+#' @family simulation functions
 #'
 #' @export
 reset_game <- function(...){
