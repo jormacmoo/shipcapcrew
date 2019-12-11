@@ -47,13 +47,13 @@ Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the 
 
 The text-based interactive gameplay begins by calling the function `start_game()` and responding to any prompts in the console.
 
-Below are two example of the interactive gameplay functionality of the package: 
+Two examples of the interactive gameplay functionality of the package: 
 
-Example of when a player wins. Hooray!
+When a player wins: Hooray!
 
 ![](winning_game.gif)
 
-Example of when a player loses, replays, and loses again. Womp womp.
+When a player loses, replays, and loses again: Womp womp.
 
 ![](losing_game.gif)
 
