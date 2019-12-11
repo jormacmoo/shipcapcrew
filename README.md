@@ -1,4 +1,4 @@
-# shipcapcrew
+# shipcapcrew <a <img src='hexsticker.png' align="right" height="139" /></a>
 
   <!-- badges: start -->
   [![Lifecycle:stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#experimental)
