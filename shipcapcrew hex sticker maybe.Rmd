@@ -16,7 +16,7 @@ imgurl <- system.file("shipcapcrew.jpg")
 
 ```{r sticker}
 sticker("shipcapcrew.jpg", package="shipcapcrew", 
-        p_size=8, s_x=1, s_y=.8, s_width=0.5, s_height=.5, h_fill = "#97bfde",
+        p_size=15, s_x=1, s_y=.8, s_width=0.5, s_height=.6, h_fill = "#97bfde",
         h_color = "#13106b", p_color = "#13106b",
         filename="hexsticker.png")
 ```
