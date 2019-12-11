@@ -33,12 +33,16 @@ On Charlie's second roll, they get: 5, 3, 2, 1. They are able to keep the 5, sin
 
 On Charlie's third roll, they get: 6, 5, 2. They are unable to keep any of these dice, since they were not able to obtain a crew. Charlie now has a ship, a captain, three remaining dice, and no more rolls. Since Charlie was unable to assemble a crew, they have a score of 0. On Jordan's third roll, they get: 6, 4, 1. They are able to keep the 4, since they already have a 6 and a 5. This means that their remaining dice, added together is 7, represents their cargo score. 
 
+Hi there! I'm so cool... but not as cool as cats, that's for certain! Meow! :)
+Also this seems super easy.
+
 Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the game!
 
 ## Two Main Components of The Package
 
 ### Interactive Gameplay
 
+![](test_video.gif)
 
 ### Gameplay Simulations
 
