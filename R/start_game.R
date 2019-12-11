@@ -1,5 +1,15 @@
 # author: jormacmoo
 
+#'start_game
+#'
+#'User-playable ship, captain, crew game
+#'
+#'@param None
+#'
+#'@ examples
+#'start_game()
+#'
+#'@export
 start_game <- function(...) {
   prev_rolls <- 0
   prev_dice <- NULL
