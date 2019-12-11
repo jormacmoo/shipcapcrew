@@ -217,11 +217,9 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
     if(dim(gamecard)[2] == 5){
       colnames(gamecard)[5] <- "p2_scores_vector"
       assign("gamecard", gamecard, envir = .GlobalEnv)
-      print(gamecard)
       stop("Simulation complete!")
     }
     assign("gamecard", gamecard, envir = .GlobalEnv)
-    print(gamecard)
     stop("Simulation complete!")
   }
   # if all requested games have been played and the game is multiplayer,
