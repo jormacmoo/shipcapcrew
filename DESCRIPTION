@@ -16,7 +16,6 @@ Authors@R:
             role = c("aut"),
             email = "ppatrick@smith.edu"))
 Description: 
-    Use four spaces when indenting paragraphs within the Description.
     Interactive gameplay and strategy functions for dice game Ship, Captain, Crew.
 License: None
 Encoding: UTF-8
