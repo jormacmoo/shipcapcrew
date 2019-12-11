@@ -244,7 +244,7 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
 #' @param num_games the number of games to be simulated
 #' @param strategy a character vector containing the player's strategy
 #'
-#' @example
+#' @examples
 #' start_game(10, "greedy")
 #'
 #' @export
