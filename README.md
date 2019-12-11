@@ -1,15 +1,31 @@
 # shipcapcrew
 R package for 'Ship, Captain, Crew' Dice Game
 
-# Description of Game
+Allows users to interactively play the game or run simulated gameplay scenarios with different strategies.
 
-## How to Play
+## Install
 
-### Rules
+To install the CRAN version, use:
+
+```{r}
+install.packages(shipcapcrew)
+```
+
+To install the development version from GitHub, use:
+
+```{r}
+devtools::install_github("jormacmoo/shipcapcrew")
+```
+
+## Description of Game
+
+### How to Play
+
+#### Rules
 
 Ship, Captain, Crew is a game that requires five six-sided dice and usually at least two players. Each player has at most three rolls they can use per game, the initial roll and two optional rerolls. Using their three rolls, each player tries to obtain a ship, a captain, and a crew, in that specific order. A ship is represented by a 6, a captain is represented by 5, and a crew is represented by a 4. Once these three dice are obtained, the sum of the remaining two dice (their cargo) is the player's score. If a player is unable to assemble a ship, captain, and crew, then their score is zero. The player with the highest cargo score wins the game. 
 
-### Example
+#### Example
 
 On Charlie's first roll, they get: 6,4,3,3,2. They are able to keep the 6, however they are not able to keep the 4, since they did not roll a 5. Charlie now has a ship, four remaining dice, and two more rolls. On Jordan's first roll, they get: 5, 4, 3, 3, 2. The are unable to keep any of their dice, since they did not roll a 6. Jordan has nothing, five remaining dice, and two more rolls.
 
@@ -19,11 +35,10 @@ On Charlie's third roll, they get: 6, 5, 2. They are unable to keep any of these
 
 Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the game!
 
-# Two Main Components of The Package
+## Two Main Components of The Package
 
-## Interactive Game Play
+### Interactive Gameplay
 
 
-
-## Game play Simulations
+### Gameplay Simulations
 
