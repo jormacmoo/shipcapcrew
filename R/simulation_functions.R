@@ -11,7 +11,7 @@
 #    greedy_reroll: strategy function where player rerolls every time possible
 #    final_scores_tab: determines value of player dice kept
 #    add_scores: creates gamecard dataframe and appends latest player score
-#    reset_game: removes gamecard from environment so new simulation can be run
+#    reset_simulation: removes gamecard from environment so new simulation can be run
 
 # strategy function encompassing all strategies
 # this function takes arguments from initial_gameplay and calls the correct strategy function
@@ -357,19 +357,19 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
   }
 }
 
-#' reset_game
+#' reset_simulation
 #'
 #' Configures global environment to allow for repeated game simulations
 #'
 #' @param None
 #'
 #' @examples
-#' reset_game()
+#' reset_simulation()
 #'
 #' @family simulation functions
 #'
 #' @export
-reset_game <- function(...){
+reset_simulation <- function(...){
   if(exists("gamecard", where = .GlobalEnv)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
 from the global environment. Be sure to assign gamecard to a new object if you'd

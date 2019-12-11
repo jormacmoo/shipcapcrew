@@ -3,4 +3,5 @@
 export(multiplayer_simulation)
 export(reset_game)
 export(start_game)
+export(reset_simulation)
 export(start_simulation)
