@@ -23,5 +23,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports:
+<<<<<<< HEAD
     purrr
     
+=======
+    purrr,
+    dplyr
+>>>>>>> 18d60d8c7516aedcb71e4c577df306436cc7f3ea
