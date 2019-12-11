@@ -306,8 +306,20 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
     # if ship, captain, and crew are not all present, call rolling_function
     rolling_function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, multiplayer)
   }
-  }
+}
 
+#' multiplayer_game
+#'
+#' Initializes gameplay for two players
+#'
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param strategy a character vector containing p1 and p2 strategies
+#'
+#' @examples
+#' multiplayer_game(4, c("greedy", "greedy"))
+#' multiplayer_game(100, c("none", "greedy"))
+#'
+#' @export
 multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
   # check that num_games is an integer or numeric vector of length = 1
   if(is.integer(num_games) == FALSE & is.numeric(num_games) == FALSE | length(num_games) > 1){
@@ -336,6 +348,16 @@ multiplayer_game <- function(num_games, strategy, multiplayer = TRUE){
   }
 }
 
+#' reset_game
+#'
+#' Configures global environment to allow for repeated game simulations
+#'
+#' @param None
+#'
+#' @examples
+#' reset_game()
+#'
+#' @export
 reset_game <- function(...){
   if(exists("gamecard", where = .GlobalEnv)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
