@@ -1,7 +1,11 @@
 # shipcapcrew
 R package for 'Ship, Captain, Crew' Dice Game
 
-Allows users to interactively play the game or run simulated gameplay scenarios with different strategies.
+<!-- badges: start -->
+[![Lifecycle:stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+`shipcapcrew` allows users to interactively play the game or run simulated gameplay scenarios with different strategies.
 
 ## Install
 
