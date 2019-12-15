@@ -70,7 +70,7 @@ start_game <- function(...) {
 #'game_turn(1, 3, c(6, 5))
 #'@export
 game_turn <- function(prev_rolls, dice_to_roll, prev_dice) {
-  roll <<- reroll(dice_to_roll)
+  roll <- reroll(dice_to_roll)
   output <- check_roll(roll, prev_dice)
   good_dice <- output[[1]]
   leftover_dice <- output[[2]]
