@@ -1,14 +1,16 @@
-# author: jormacmoo
+#game_functions
+#Includes:
+#      start_game: user facing function to play interactive single player game
+#      game_turn: function to simulate a single turn
 
 #'start_game
 #'
 #'User-playable ship, captain, crew game
 #'
 #'@param None
-#'
-#'@ examples
+#'@family Interactive Gameplay
+#'@examples
 #'start_game()
-#'
 #'@export
 start_game <- function(...) {
   prev_rolls <- 0
@@ -54,6 +56,19 @@ start_game <- function(...) {
   }
 }
 
+#'game_turn
+#'
+#'Simulate single game turn
+#'
+#'@param prev_rolls Number of turns already completed
+#'@param dice_to_roll Number of dice to be rolled this turn
+#'@param prev_dice Any dice kept from previous turns
+#'@return List containing number of dice that can be rolled next turn, current player score, and dice that are kept
+#'@family Interactive Gameplay
+#'@examples
+#'game_turn(0, 5, NULL)
+#'game_turn(1, 3, c(6, 5))
+#'@export
 game_turn <- function(prev_rolls, dice_to_roll, prev_dice) {
   roll <<- reroll(dice_to_roll)
   output <- check_roll(roll, prev_dice)
