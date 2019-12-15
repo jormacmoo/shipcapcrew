@@ -7,7 +7,7 @@
 start_game(...)
 }
 \arguments{
-\item{None}{}
+\item{...}{optional arguments, not necessary for gameplay}
 }
 \description{
 User-playable ship, captain, crew game

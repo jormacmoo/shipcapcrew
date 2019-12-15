@@ -47,13 +47,13 @@ Since Jordan's final score is 7 and Charlie's final score is 0, Jordan wins the 
 
 The text-based interactive gameplay begins by calling the function `start_game()` and responding to any prompts in the console.
 
-Below are two example of the interactive gameplay functionality of the package: 
+Two examples of the interactive gameplay functionality of the package: 
 
-Example of when a player wins. Hooray!
+When a player wins: Hooray!
 
 ![](winning_game.gif)
 
-Example of when a player loses, replays, and loses again. Womp womp.
+When a player loses, replays, and loses again: Womp womp.
 
 ![](losing_game.gif)
 
@@ -66,6 +66,8 @@ The simulation component of `shipcapcrew` is based on three primary user-facing 
 * `reset_simulation` configures the global environment so additional simulations may be run
 
 Together, these functions allow a user to input a desired number of games to play, plus strategies for gameplay, and run a series of games in quick succession in order to obtain results. `start_simulation` and `multiplayer-simulation` each rely on a series of back-end helper functions in order to execute gameplay; the final output of a call to either of these functions is a `data.frame` of game outcomes, though neither of these functions generates the `data.frame` itself. 
+
+**When running multiplayer simulations**, be sure to run `reset_simulation` after each one; this will ensure that your environment is configured properly to allow for additional multiplayer simulations to be run!
 
 Below are examples of how this simulation functionality can be used. The structure of the output `data.frame` facilitates its use in creating plot(s) of score distributions. 
 

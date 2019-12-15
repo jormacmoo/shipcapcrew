@@ -17,11 +17,11 @@ Authors@R:
             email = "ppatrick@smith.edu"))
 Description: 
     Interactive gameplay and strategy functions for dice game Ship, Captain, Crew.
-License: None
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.1
 Imports:
-    purrr,
+    purrr, 
     dplyr
