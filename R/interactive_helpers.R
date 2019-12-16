@@ -16,7 +16,7 @@
 #'@param rolled_dice - most recently rolled dice
 #'@param prev_dice - any dice kept from previous turns
 #'@return List containing a vector of the dice to be kept and a vector of dice to be rerolled
-#'@import purrr
+#'
 check_roll <- function(rolled_dice, prev_dice) {
 
   rolled_dice <- c(rolled_dice, prev_dice)
@@ -35,7 +35,7 @@ check_roll <- function(rolled_dice, prev_dice) {
   } else if (length(rolled_dice) < 5) {
     stop("Not enough dice rolled. Please input five dice rolls.")
   } else if (length(rolled_dice == 5)) {
-    roll_nums <- purrr::map(rolled_dice, check_number)
+    roll_nums <- map(rolled_dice, check_number)
     if (FALSE %in% roll_nums) {
       stop("Invalid roll. Please input numbers between 1 and 6.")
     }
@@ -88,7 +88,8 @@ check_roll <- function(rolled_dice, prev_dice) {
 #'@param components - dice to keep from roll
 #'@param score - current player score
 #'@param num_rolls - number of turns a player has played
-#'@import purrr
+#'
+#'@importFrom rlang is_empty
 #'
 #'@family Interactive Gameplay
 player_message <- function(components, score, num_rolls) {

@@ -6,11 +6,10 @@
 #'start_game
 #'
 #'User-playable ship, captain, crew game
-#'
-#'@param None
+#'@param ... user-provided additional arguments, not needed for regular gameplay
 #'@family Interactive Gameplay
 #'@examples
-#'start_game()
+#'\dontrun{start_game()}
 #'@export
 start_game <- function(...) {
   prev_rolls <- 0
