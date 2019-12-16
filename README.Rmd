@@ -27,7 +27,7 @@ R package for 'Ship, Captain, Crew' Dice Game
 
 To install the development version from GitHub, use:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 devtools::install_github("jormacmoo/shipcapcrew")
 ```
 

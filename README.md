@@ -20,40 +20,6 @@ To install the development version from GitHub, use:
 
 ``` r
 devtools::install_github("jormacmoo/shipcapcrew")
-#> Downloading GitHub repo jormacmoo/shipcapcrew@master
-#> BH (1.69.0-1 -> 1.72.0-1) [CRAN]
-#> Installing 1 packages: BH
-#> 
-#>   There is a binary version available but the source version is
-#>   later:
-#>      binary   source needs_compilation
-#> BH 1.69.0-1 1.72.0-1             FALSE
-#> installing the source package 'BH'
-#>   
-   checking for file ‘/private/var/folders/v4/f1gswcrd3cbfn0p_fr60xm3h0000gn/T/Rtmp63Dr7C/remotes174764b586227/jormacmoo-shipcapcrew-ad624cc/DESCRIPTION’ ...
-  
-✓  checking for file ‘/private/var/folders/v4/f1gswcrd3cbfn0p_fr60xm3h0000gn/T/Rtmp63Dr7C/remotes174764b586227/jormacmoo-shipcapcrew-ad624cc/DESCRIPTION’
-#> 
-  
-─  preparing ‘shipcapcrew’:
-#> 
-  
-   checking DESCRIPTION meta-information ...
-  
-✓  checking DESCRIPTION meta-information
-#> 
-  
-─  checking for LF line-endings in source and make files and shell scripts
-#> 
-  
-─  checking for empty or unneeded directories
-#> 
-  
-─  building ‘shipcapcrew_0.1.0.tar.gz’
-#> 
-  
-   
-#> 
 ```
 
 ## Description of Game
