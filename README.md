@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# shipcapcrew <img src='hexsticker.png' align="right" height="139" /></a>
+# shipcapcrew <img src='man/Figures/hexsticker.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 [![Lifecycle:stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -78,11 +78,11 @@ Two examples of the interactive gameplay functionality of the package:
 
 When a player wins: Hooray\!
 
-![](winning_game.gif)
+![](man/Figures/winning_game.gif)
 
 When a player loses, replays, and loses again: Womp womp.
 
-![](losing_game.gif)
+![](man/Figures/losing_game.gif)
 
 ### Gameplay Simulations
 
@@ -111,6 +111,6 @@ Below are examples of how this simulation functionality can be used. The
 structure of the output `data.frame` facilitates its use in creating
 plot(s) of score distributions.
 
-![](strgamecard.png)
+![](man/Figures/strgamecard.png)
 
-![](greedyhist.png)
+![](man/Figures/greedyhist.png)
