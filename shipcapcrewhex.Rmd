@@ -1,0 +1,22 @@
+---
+title: "shipcapcrew hex"
+author: "Paige Patrick"
+date: "12/10/2019"
+output: pdf_document
+---
+
+```{r}
+install.packages("hexSticker")
+```
+
+```{r}
+library(hexSticker)
+imgurl <- system.file("shipcapcrew.jpg")
+sticker("shipcapcrew.jpg", package="hexSticker", 
+        p_size=8, s_x=1, s_y=.8, s_width=1.2, s_height=1,
+        filename="hexsticker.png")
+```
+
+
+
+
