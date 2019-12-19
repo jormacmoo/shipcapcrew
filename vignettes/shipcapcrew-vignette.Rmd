@@ -64,3 +64,4 @@ At any point in the game, players opt out of playing by answering "N" to *Would 
 
 If at any point the player would like to play the game again, they should simply rerun the function!
 
+# ** Simulating Game Play Scenarios for 'Ship, Captain, Crew'**
