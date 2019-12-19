@@ -103,6 +103,8 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
 #'
 #' @export
 reset_simulation <- function(){
+  gamecard <- NULL
+  strategy <- NULL
   if(exists("gamecard", where = .GlobalEnv)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
 from the game environment. Be sure to assign gamecard to a new object if you'd

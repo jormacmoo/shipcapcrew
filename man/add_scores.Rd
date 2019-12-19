@@ -24,6 +24,8 @@ add_scores(player_dice, num_dice, num_games, num_rolls, strategy,
 
 \item{scores_vector}{a vector of a player's scores}
 
+\item{final_score}{a numeric vector of a player's most recent final score}
+
 \item{multiplayer}{a logical vector determining whether games are single or multiplayer}
 }
 \description{
