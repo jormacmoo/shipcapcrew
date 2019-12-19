@@ -26,3 +26,8 @@ Imports:
     purrr,
     dplyr,
     rlang
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
