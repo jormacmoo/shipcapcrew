@@ -123,7 +123,7 @@ The helper functions family consists of six closed functions, meaning they canno
 
 `final_scores_tab`: Calculates a player's current score, after they have either collected all the required dice (6,5,4), or the player runs out of rolls. It performs similarly to the `find_score` function in the *Interactive Gameplay* family.
 
-`add_scores`: Appends the latest player score to the gamecard data frame, and assigns this gamecard to the `game_env` environment.
+`add_scores`: Appends the latest player score to the gamecard data frame, and assigns this gamecard to the global environment.
 
 None of these helper functions, except `add_scores`, explicitly return anything. Together, these family of functions exist to help the main family functions create the user-facing simulated gameplay.
 
@@ -133,7 +133,7 @@ There are three functions that make up this family, all of which the user can in
 
 ### `start_simulation()`
 
-This function initializes a single-player game. It reads in the number of games the user would like to be simulated, the strategy the player would like the simulation to optimize, and indicates that the gameplay is single player. It does not explicitly return anything, but it creates a data frame containing player scores and strategies for each simulated game, as well as an environment `game_env` to which this final data frame is assigned with the helper function `add_scores`.
+This function initializes a single-player game. It reads in the number of games the user would like to be simulated, the strategy the player would like the simulation to optimize, and indicates that the gameplay is single player. It does not explicitly return anything, but it creates a data frame containing player scores and strategies for each simulated game.
 
 ```{r, eval = FALSE}
 start_simulation()
@@ -143,7 +143,7 @@ This function uses all helper functions listed above: `initial_gameplay`, `rolli
 
 ### `multiplayer_simulation()`
 
-This function initializes a two-player game. It reads in the number of games the user would like to be simulated, the strategies the user would like the simulation to use, and indicates that the gameplay is multiplayer. It assigns a `strategy_vector` to the `game_env` and appends second player strategy vectors to existing gamecards.
+This function initializes a two-player game. It reads in the number of games the user would like to be simulated, the strategies the user would like the simulation to use, and indicates that the gameplay is multiplayer. It assigns a `strategy_vector` to the global environment and appends second player strategy vectors to existing gamecards.
 
 ```{r, eval = FALSE}
 multiplayer_simulation()
