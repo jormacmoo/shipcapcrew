@@ -5,7 +5,7 @@
 #    player_message: prints messages in response to player rolls
 #    find_score: calculates current player score
 #    reroll: randomly simulates dice rolls
-#    reroll_prompt: asks player if they will to reroll and collects answer
+#    reroll_prompt: asks player if they want to reroll and collects answer
 #    play_again: at end of game, asks user if they will start a new game and collects answer
 
 #'check_roll
