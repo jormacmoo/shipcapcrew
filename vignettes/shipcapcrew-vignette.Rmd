@@ -37,6 +37,7 @@ Once the game is initiated, the console will present the player with their first
 
 <img src="Picture_1.png" height="80px" width="600px" />
 
+![](Picture_1.png ""){width=600}
 
 Player will be made aware of the dice they rolled, the ones that they are allowed to keep, the ones they need to obtain, and how many rolls they have left in the game. 
 
