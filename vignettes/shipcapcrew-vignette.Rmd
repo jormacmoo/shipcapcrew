@@ -18,10 +18,10 @@ knitr::opts_chunk$set(
 library(shipcapcrew)
 ```
 
-## There Are Two Main Components of this Package:
+## There Are Two Families of Functions for this Package:
 
-### **1.** Interactively Playing 'Ship, Captain, Crew`
-### **2.** Simulating Game Play Scenarios for 'Ship, Captain, Crew'
+### **1.** Interactive Gameplay
+### **2.** Simulation Function
 
 *If you have not done so already, please refer to the ReadME for a description of how to play the game.*
 
@@ -33,36 +33,36 @@ This aspect of the package is fairly straight forward. To initiate a single-play
 start_game()
 ```
 
-Once the game is initiated, the console will present the player with their first set of rolled dice. 
+Once the game is initiated, the console will present you with your first set of rolled dice. 
 
 <img src="Picture_1.png" height="80px" width="600px" />
 
-![](Picture_1.png ""){width=600}
+You will be made aware of the dice you rolled, the ones that you are allowed to keep, the ones you still need to obtain, and how many rolls you have left in the game. 
 
-Player will be made aware of the dice they rolled, the ones that they are allowed to keep, the ones they need to obtain, and how many rolls they have left in the game. 
+You'll then be asked if you would like to reroll and should indicate either:
 
-Player will then be asked if they would like to reroll and should indicate either:
-
-"Y", for yes they would like to reroll **OR** "N", for no they would not like to reroll
+`Y`, for `yes` you would like to reroll **OR** `N`, for `no` you would not like to reroll
 
 *either way, make sure to capitalize the letter*
 
-If player decides that they would like to reroll, then the number of their remaining dice that was not kept from the previous roll will be rerolled. Player again will shown they newly rolled nice, told what dice will be kept on their behalf, if any, what dice they still need to collect, and how many rolls they have remaining.
+If you decide that you would like to reroll, then the number of your remaining dice that were not kept from the previous roll will be rerolled. You'll again be shown they newly rolled nice, told what dice will be kept on your behalf, if any, what dice you still need to collect, and how many rolls you have remaining.
 
 <img src="Picture_2.png" height="80px" width="600px" />
 
-Player can continue this process, if they choose, until they have used all three of their rolls. At this point, if the player has collected a 6, 5, and 4 (representing a ship, captain, and crew), then their last two remaining dice will be added up to present their final cargo score.
+You can continue this process, if you choose, until you have used all three of your rolls. At this point, if you've collected a 6, 5, and 4 (representing a ship, captain, and crew), then your last two remaining dice will be added up to present your final cargo score.
 
 <img src="Picture_3.png" height="80px" width="600px" />
 
-If they were unable to obtain all three required dice, then their score will be zero. 
+If you are unable to obtain all three required dice, then your score will be zero. 
 
 <img src="Picture_4.png" height="80px" width="600px" />
 
-At any point in the game, players opt out of playing by answering "N" to *Would you like to reroll?* or *Would you like to play again?* At this point, players will thanked for playing and the function will be halted.
+At any point in the game, if you want to opt out of playing, just answer `N` to *Would you like to reroll?* or *Would you like to play again?* You will then be thanked for playing and the function will be halted. Stopping the code chunk the function is in will not terminate the function.
 
 <img src="Picture_5.png" height="80px" width="600px" />
 
-If at any point the player would like to play the game again, they should simply rerun the function!
+If at any point you would like to play the game again, you should simply rerun the function!
 
-# ** Simulating Game Play Scenarios for 'Ship, Captain, Crew'**
+# **Simulating Game Play Scenarios for 'Ship, Captain, Crew'**
+
+
