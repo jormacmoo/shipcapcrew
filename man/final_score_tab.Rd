@@ -30,7 +30,8 @@ final_score_tab(player_dice, num_dice, num_games, num_rolls, strategy,
 Tabulates final score for individual game scenerios and calls add_scores
 }
 \seealso{
-Other helper functions: \code{\link{greedy_reroll}},
+Other helper functions: \code{\link{add_scores}},
+  \code{\link{greedy_reroll}},
   \code{\link{initial_gameplay}},
   \code{\link{rolling_function}},
   \code{\link{strategy_function}}

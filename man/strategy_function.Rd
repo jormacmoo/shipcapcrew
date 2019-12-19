@@ -31,7 +31,8 @@ Uses the \code{strategy} argument to determine which alternative rolling functio
 captain, and crew are all present in a player's hand.
 }
 \seealso{
-Other helper functions: \code{\link{final_score_tab}},
+Other helper functions: \code{\link{add_scores}},
+  \code{\link{final_score_tab}},
   \code{\link{greedy_reroll}},
   \code{\link{initial_gameplay}},
   \code{\link{rolling_function}}

@@ -299,6 +299,21 @@ final_score_tab <- function(player_dice, num_dice, num_games, num_rolls, strateg
   add_scores(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, final_score, multiplayer)
   }
 
+#' add_scores
+#'
+#' Checks if all requested games have been played, if the games are single or multiplayer, and assigns the final gamecard to the global environment
+#'
+#' @param player_dice a vector of the dice saved to a player's hand in a given game
+#' @param num_dice the number of dice a player has left to roll
+#' @param num_games the number of games a user wishes to run within the simulation
+#' @param num_rolls the number of rolls a player has left to use
+#' @param strategy a character vector containing p1 and p2 strategies
+#' @param game_ticker the number of games already completed in the simulation
+#' @param gamecard a dataframe storing game number and score information
+#' @param scores_vector a vector of a player's scores
+#' @param multiplayer a logical vector determining whether games are single or multiplayer
+#'
+#' @family helper functions
 add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, final_score, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker, final_score)
   # checking that arguments intended to be numeric or integer are not character or logical

@@ -31,7 +31,8 @@ Checks status of game running and makes calls to appropriate other helper functi
 depending on the number of rolls left, number of games completed, etc.
 }
 \seealso{
-Other helper functions: \code{\link{final_score_tab}},
+Other helper functions: \code{\link{add_scores}},
+  \code{\link{final_score_tab}},
   \code{\link{greedy_reroll}},
   \code{\link{rolling_function}},
   \code{\link{strategy_function}}

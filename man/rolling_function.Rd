@@ -30,7 +30,8 @@ rolling_function(player_dice, num_dice, num_games, num_rolls, strategy,
 Simulates rolling of a player's remaining dice and calls initial_gameplay
 }
 \seealso{
-Other helper functions: \code{\link{final_score_tab}},
+Other helper functions: \code{\link{add_scores}},
+  \code{\link{final_score_tab}},
   \code{\link{greedy_reroll}},
   \code{\link{initial_gameplay}},
   \code{\link{strategy_function}}
