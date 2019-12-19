@@ -100,7 +100,7 @@ in quick succession in order to obtain results. `start_simulation` and
 `multiplayer-simulation` each rely on a series of back-end helper
 functions in order to execute gameplay; the final output of a call to
 either of these functions is a `data.frame` of game outcomes, though
-neither of these functions generates the `data.frame` itself.
+neither of these functions returns the `data.frame` itself.
 
 **When running multiplayer simulations**, be sure to run
 `reset_simulation` after each one; this will ensure that your
