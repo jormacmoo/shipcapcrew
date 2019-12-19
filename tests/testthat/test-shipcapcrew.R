@@ -11,6 +11,6 @@
 
 # test_that("interactive works", {
 #
-#   expect_type(start_game(), "You've rolled")
+#   expect_type(class(start_game()), "Message")
 #
 # })
