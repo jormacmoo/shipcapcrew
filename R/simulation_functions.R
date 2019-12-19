@@ -103,13 +103,15 @@ multiplayer_simulation <- function(num_games, strategy, multiplayer = TRUE){
 #'
 #' @export
 reset_simulation <- function(){
-  if(exists("gamecard", where = .GlobalEnv) & exists("strategy", where = .GlobalEnv)){
+  if(exists("gamecard", where = .GlobalEnv)){
    confirm_input <- readline(prompt = "Resetting the simulation will remove the last simulation's dataframe
 from the game environment. Be sure to assign gamecard to a new object if you'd
 like to keep it! Would you like to reset? Y/N")
    if(confirm_input == "Y"){
      rm(gamecard, pos = .GlobalEnv)
-     rm(strategy, pos = .GlobalEnv)
+     if(exists("strategy", where = .GlobalEnv)){
+       rm(strategy, pos = .GlobalEnv)
+     }
      cat("You're ready to run another simulation!")
    }
    if(confirm_input == "N"){
