@@ -62,7 +62,6 @@ initial_gameplay <- function(player_dice, num_dice, num_games, num_rolls, strate
   }
   }
 
-game_env <- new.env(parent = emptyenv())
 
 #' strategy_function
 #'

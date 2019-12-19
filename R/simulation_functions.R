@@ -27,6 +27,7 @@ start_simulation <- function(num_games, strategy = "default", multiplayer = FALS
     stop("strategy should only hold the strategy arguments for up to two players.")
   }
   # create vector to label the number game being played
+  game_env <<- new.env(parent = emptyenv())
   game_vector <- c(1:num_games)
   # if game is multiplayer and gamecard already exists, create p2's strategy vector,
   # append to gamecard, and call initial_gameplay for p2
