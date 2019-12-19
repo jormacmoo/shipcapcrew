@@ -11,3 +11,4 @@
 ^shipcapcrewhex\.Rmd$
 ^progress_pipeline\.Rmd$
 ^README\.Rmd$
+^inst/tutorials/interactive-tutorial\.Rmd$

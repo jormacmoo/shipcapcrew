@@ -1,0 +1,165 @@
+---
+title: "shipcapcrew-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{shipcapcrew-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shipcapcrew)
+```
+
+## There Are Two Families of Functions for this Package:
+
+### **1.** Interactive Gameplay
+### **2.** Simulation Functions
+
+*If you have not done so already, please refer to the ReadME for a description of how to play the game.*
+
+# **Interactive Gameplay **
+
+This element of our package is mostly meant to be enjoyable for the user, and does not solve any problems in the data science community. Although the user-facing aspect of this family of functions is straightforward and easy to navigate, there is a lot happening behind the scenes that allowed such a beautifully simplistic `start game()` function to exist in our package.
+
+These functions can be broken up into two aspects of the *Interactive Gameplay* family:
+
+* Game helper functions
+
+* Main game functions
+
+*To help distinguish between main and helper functions, main functions will be marked with `()` after the name, while helper functions will not.*
+
+## **Helper Functions**
+
+The helper functions group consists of six closed functions, meaning they cannot be accessed by the user, that aid in the main game functions:
+
+`reroll`: A function that simulates the rolling of a size-sided die, with each side having an equal probability of facing up. It reads in the number of dice that need to be rolled. It returns a freshly rolled number of dice that needed to be rolled.
+
+`check_roll`: A function separates the rolled dice into those that the player can keep, as dictated by the rules of the game, and those that the player can reroll. It reads in the most recently rolled dice and any that were kept from previous turns. It returns a list containing a vector of the dice to be kept and a vector of the dice to be rerolled. 
+
+`find_score`: Which calculates a players current score, after they have either collected after all the required dice are obtained or the player runs out of rolls. It checks if the score will be nonzero, as well as the numbers used to calculate the player's score.
+
+`player_message`:  A function that prints messages to the player, in response to the outcome of their roll. It reads in the dice kept from previous rolls, the player's current score, and the number of rolls a player has left. It returns a message displaying all this information neatly for the user.
+
+`reroll_prompt`: Which asks the player if they would like to reroll, and takes a yes or no response. It reads in the current number of rolls a player has already used. It returns the number of rolls used, when the player rerolls.
+
+`play_again`: A function at the end of the game, which also takes a yes or no response, asks the user if they would like to start a new game. It reads in the final score the player obtained in the last game. It returns the final score the player obtained in the last game, if play starts another game. 
+
+Together, these functions exist to help the main functions create the easy-to-use interactive game play.
+
+## **Main Game Functions**
+
+There are two functions that the user can interact with will working with the *Interactive Gameplay* family of functions: `game_turn()` and `start_game()`.
+
+### `game_turn()`
+
+This function simulates a single game turn. It reads in the number of turns already completed within a given game, the number of dice to be rolled on the given turn, and the number of dice kept from previous turns. It returns a list containing the number of dice that can be rolled on the player's next turn, the player's current score, and the player's dice that were kept from previous rolls. Although this function is open for users, it does not necessarily add to the interactive gameplay experience in any major way.
+
+```{r, eval = FALSE}
+game_turn()
+```
+
+This function uses the first four helper functions listed above: `reroll`, `check_roll`, `find_score`, `player_message`.
+
+### `start_game()`
+
+In general, this is the main game function that brings all the other functions related to the *Interactive Gameplay* together. It initiates a single-player, interactive game the user can play. No further arguments are required to start the game, however having the console visible will be helpful the play navigate the performance of this function further.
+
+```{r, eval = FALSE}
+start_game()
+```
+
+This function uses the last two of the helper functions mentioned above: `reroll_prompt` and `play_again`. It also calls on the other function open to the users: `game_turn()`.
+
+# **Simulation Function**
+
+This collection of functions, which are actually broken in to two distinct families, offers the user the opportunity to simulate a desired number of games, plus strategies, and presents the results in a clean and organized way. These functions highlight the probability aspect of dice playing games in general, while creating a statistical aspect to our package.
+
+Similarly to the other family, this collection of functions is broken up into two distinct groups. However, each of these groups is its own family of functions.
+
+* Game helper functions - *Helper Functions* family
+
+* Main game functions - *Simulation Functions* family
+
+*To help distinguish between main and helper functions, main functions will again be marked with `()` after the name, while helper functions will not.*
+
+## **Helper Functions Family**
+
+The helper functions family consists of six closed functions, meaning they cannot be accessed by the user, that aid in the main game functions.
+
+*Each of these helper functions listed direct below checks for a plethora of arguments:*
+
+* the number of dice saved to a player’s hand in a given game
+
+* the number of dice a player has left to roll
+
+* the number of games a user wishes to run within the simulation
+
+* the number of rolls a player has left to use the strategies for player one and two
+
+* the number of games already completed in the simulation
+
+* the player’s scores
+
+* a data frame containing all information about numbers and scores
+
+* if games are single or multiplayer
+
+`initial_gameplay`: Depending on the status of the gameplay, this function calls other gameplay functions that will be discussed below.
+
+`rolling_function`: A function that simulates the rolling of a size-sided die, with each side having an equal probability of facing up. It determines whether dice values can be kept in player's hand, or have to be returned to be rerolled. It performs similarly to the `reroll` and `check reroll` functions in the *Interactive Gameplay* family.
+
+`strategy_function`: Determines which, if any, strategy a player is using for a game simulation, and it calls on the appropriate function that runs a specific strategy.
+
+`greedy_reroll`: Is a function that contains a strategy where the player rerolls each time it is made available to them, regardless of their current score or number of rolls remaining.
+
+`final_scores_tab`: Which calculates a players current score, after they have either collected after all the required dice are obtained or the player runs out of rolls. It performs similar to the `find_score` function in the *Interactive Gameplay* family.
+
+`add_scores`: Creates a data frame and appends latest player’s score, and presents this information to the user as a as a gamecard.
+
+None of these helper functions explicitly return anything. Together, these family of functions exist to help the main family functions create the user-facing simulated gameplay.
+
+## **Simulation Functions Family**
+
+There are three functions that make up this second family that the user can interact with will working with the *Simulation Functions* collection of functions: `start_simulation()`, `multiplayer_simulation()`, and `reset_simulation()`.
+
+### `start_simulation()`
+
+This function initializes a single-player game. It reads in the number of games the user would like to be simulated, the strategy the player would like the simulation to optimize, and indicates that the gameplay is single player. It returns a data frame containing the 
+
+```{r, eval = FALSE}
+start_simulation()
+```
+
+This function uses all helper functions listed above: `initial_gameplay`, `rolling_function`, `strategy_function`, `greedy_reroll`, `final_scores_tab`, `add_scores`.
+
+### `multiplayer_simulation()`
+
+This function initializes a single-player game. It reads in the number of games the user would like to be simulated, the strategy the player would like the simulation to optimize, and indicates that the gameplay is single player. It returns a data frame containing the 
+
+```{r, eval = FALSE}
+multiplayer_simulation()
+```
+
+This function uses all helper functions listed above: `initial_gameplay`, `rolling_function`, `strategy_function`, `greedy_reroll`, `final_scores_tab`, `add_scores`.
+
+
+### `reset_simulation()`
+
+This function removes the previous multiplayer gamecards from environment, so that the user can run new simulation. Users should be advised to reset the simulations after running each multiplayer gameplay simulation.
+
+```{r, eval = FALSE}
+reset_simulation()
+```
+
+This function does not use any of the functions from the *Helper Functions* family.
+ 
+
