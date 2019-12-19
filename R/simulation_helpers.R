@@ -326,13 +326,13 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
     gamecard <- data.frame(gamecard, scores_vector)
     if(dim(gamecard)[2] == 5){
       colnames(gamecard)[5] <- "p2_scores_vector"
-      assign("gamecard", gamecard, envir = game_env)
+      assign("gamecard", gamecard, envir = .GlobalEnv)
       opt <- options(show.error.messages = FALSE)
       on.exit(options(opt))
       cat("Simulation complete!")
       stop()
     }
-    assign("gamecard", gamecard, envir = game_env)
+    assign("gamecard", gamecard, envir = .GlobalEnv)
     opt <- options(show.error.messages = FALSE)
     on.exit(options(opt))
     cat("Simulation complete!")
@@ -342,7 +342,7 @@ add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, ga
   # create gamecard, assign to GlobalEnv, and call multiplayer_simulation to play second player's game
   if(game_ticker == num_games & multiplayer == TRUE){
     gamecard <- data.frame(gamecard, scores_vector)
-    assign("gamecard", gamecard, envir = game_env)
+    assign("gamecard", gamecard, envir = .GlobalEnv)
     multiplayer_simulation(num_games, strategy, multiplayer)
   }
   # if the reuested number of games has not been played, reset num_rolls and

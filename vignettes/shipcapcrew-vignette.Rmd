@@ -154,7 +154,7 @@ This function uses all helper functions listed above: `initial_gameplay`, `rolli
 
 ### `reset_simulation()`
 
-This function removes the previous multiplayer gamecards from the game environment so that the user can run new simulations. Users should be advised to call this function after running each multiplayer gameplay simulation.
+This function removes the previous multiplayer gamecards from the game environment so that the user can run new simulations. Users should be advised to call this function after running each multiplayer gameplay simulation. Users can run multiple consecutive single player simulations without using this function.
 
 ```{r, eval = FALSE}
 reset_simulation()
