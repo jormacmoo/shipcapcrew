@@ -10,6 +10,8 @@
 #    final_scores_tab: determines value of player dice kept
 #    add_scores: creates gamecard dataframe and appends latest player score
 
+globalVariables(c("gamecard", "strategy"))
+
 #' initial_gameplay
 #'
 #' Checks status of game running and makes calls to appropriate other helper functions
@@ -314,10 +316,9 @@ final_score_tab <- function(player_dice, num_dice, num_games, num_rolls, strateg
 #' @param final_score a numeric vector of a player's most recent final score
 #' @param multiplayer a logical vector determining whether games are single or multiplayer
 #'
+#' @importFrom utils globalVariables
+#'
 #' @family helper functions
-
-globalVariables(c("gamecard", "strategy"))
-
 add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, final_score, multiplayer){
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker, final_score)
   # checking that arguments intended to be numeric or integer are not character or logical
