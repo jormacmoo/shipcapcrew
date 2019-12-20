@@ -315,9 +315,10 @@ final_score_tab <- function(player_dice, num_dice, num_games, num_rolls, strateg
 #' @param multiplayer a logical vector determining whether games are single or multiplayer
 #'
 #' @family helper functions
+
+globalVariables(c("gamecard", "strategy"))
+
 add_scores <- function(player_dice, num_dice, num_games, num_rolls, strategy, game_ticker, gamecard, scores_vector, final_score, multiplayer){
-  gamecard <- NULL
-  strategy <- NULL
   num_vars <- c(player_dice, num_dice, num_games, num_rolls, game_ticker, final_score)
   # checking that arguments intended to be numeric or integer are not character or logical
   if(any(map_lgl(num_vars, is.character)) | any(map_lgl(num_vars, is.logical))){
