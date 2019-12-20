@@ -143,7 +143,7 @@ This function uses all helper functions listed above: `initial_gameplay`, `rolli
 
 ### `multiplayer_simulation()`
 
-This function initializes a two-player game. It reads in the number of games the user would like to be simulated, the strategies the user would like the simulation to use, and indicates that the gameplay is multiplayer. It assigns a `strategy_vector` to the global environment and appends second player strategy vectors to existing gamecards.
+This function initializes a two-player game. It reads in the number of games the user would like to be simulated, the strategies the user would like the simulation to use, and indicates that the gameplay is multiplayer. It assigns a `strategy_vector` to the global environment and appends second player strategy vectors to existing gamecards. However, again it doesn't explicitly return anything.
 
 ```{r, eval = FALSE}
 multiplayer_simulation()
