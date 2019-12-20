@@ -111,6 +111,18 @@ Below are examples of how this simulation functionality can be used. The
 structure of the output `data.frame` facilitates its use in creating
 plot(s) of score distributions.
 
+``` r
+library(shipcapcrew)
+start_simulation(100, "greedy")
+str(gamecard)
+```
+
 ![](man/Figures/strgamecard.png)
+
+``` r
+library(ggplot2)
+ggplot(gamecard, aes(x = scores_vector)) + 
+  geom_histogram()
+```
 
 ![](man/Figures/greedyhist.png)

@@ -79,6 +79,18 @@ Together, these functions allow a user to input a desired number of games to pla
 
 Below are examples of how this simulation functionality can be used. The structure of the output `data.frame` facilitates its use in creating plot(s) of score distributions. 
 
+```{r, eval=FALSE}
+library(shipcapcrew)
+start_simulation(100, "greedy")
+str(gamecard)
+```
+
 ![](man/Figures/strgamecard.png)
+
+```{r histogram, eval=FALSE}
+library(ggplot2)
+ggplot(gamecard, aes(x = scores_vector)) + 
+  geom_histogram()
+```
 
 ![](man/Figures/greedyhist.png)
