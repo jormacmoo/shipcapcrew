@@ -1,14 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.travis\.yml$
-^greedyhist\.png$
-^hexsticker\.png$
-^losing_game\.gif$
-^shipcapcrew\.jpg$
-^strgamecard\.png$
-^winning_game\.gif$
 ^LICENSE\.md$
-^shipcapcrewhex\.Rmd$
-^progress_pipeline\.Rmd$
 ^README\.Rmd$
-^inst/tutorials/interactive-tutorial\.Rmd$
+^data-raw$
