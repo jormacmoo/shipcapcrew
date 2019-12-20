@@ -9,8 +9,8 @@
 
 # })
 
-# test_that("interactive works", {
-#
-#   expect_type(class(start_game()), "Message")
-#
-# })
+test_that("interactive works", {
+
+  expect_type(class(start_game()), message)
+
+})
